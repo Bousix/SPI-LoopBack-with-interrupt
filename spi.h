@@ -11,16 +11,7 @@ SPI Buffer
 ***********************************/
 extern uint8_t spiTxBuff[SPI_TX_MAX];
 extern uint8_t spiRxBuff[SPI_RX_MAX];
-/* Check whether an interrupt of the following has occured and handle it
 
-  SPI_I2S_IT_TXE: Transmit buffer empty interrupt.
-  SPI_I2S_IT_RXNE: Receive buffer not empty interrupt.
-  SPI_I2S_IT_OVR: Overrun interrupt.
-  SPI_IT_MODF: Mode Fault interrupt.
-  SPI_IT_CRCERR: CRC Error interrupt.
-  I2S_IT_UDR: Underrun interrupt.  
-  SPI_I2S_IT_TIFRFE: Format Error interrupt. 
-*/
 #define CHECK_SPI1_IRQ(SPI_I2S_IT,handle) if (SPI_I2S_GetITStatus(SPI1,(SPI_I2S_IT))==SET) goto handle;
 
 typedef void (*tSPI_Callback)(void); 
